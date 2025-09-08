@@ -4,6 +4,10 @@ function Square({value, onSquareClick}) {
   return <button className="square" onClick={onSquareClick}>{value}</button>;
 
 }
+function ReloadButton() {
+  return <button className="reload" onClick={() => window.location.reload()}>Reload Game</button>;
+}
+
 export default function Board() {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
@@ -45,10 +49,13 @@ const winner = calculateWinner(squares);
               <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
               <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
           </div>
-
-          </>
+          <div className="reload-button">
+            <ReloadButton />  
+          </div>
+      </>
   );
 }
+
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],

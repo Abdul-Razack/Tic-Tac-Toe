@@ -77,6 +77,34 @@ body {
   color: #27ae60;
   animation: glow 1s infinite alternate;
 }
+.reload {
+  background: #1b023e;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+  &:hover {
+    background: #968b9b;
+  }
+}
+.save {
+  background: #1b023e;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+  &:hover {
+    background: #968b9b;
+  }
+}
 
 @keyframes glow {
   from {
