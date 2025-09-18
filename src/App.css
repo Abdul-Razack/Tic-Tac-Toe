@@ -1,116 +1,113 @@
-* {
-  box-sizing: border-box;
-}
-
+/* General body styling */
 body {
+  background-color: #121212;
+  color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient( #1d2135, #212a56, #314d74);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
 }
 
-.status {
-  margin-bottom: 20px;
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-  color: #175ef8;
-  padding: 10px;
-  background: #c5d0decc;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(136, 112, 112, 0.15);
-}
-
-.board-row {
-  display: flex;
-  justify-content: center;
-}
-
-.square {
-  background: #d8dff9;
-  border: 2px solid #040f1b;
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 60px;
-  height: 80px;
-  width: 80px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  border-radius: 10px;
-  margin: 5px;
-  box-shadow: 0 4px 8px rgba(213, 202, 202, 0.1);
-}
-
-.square:hover {
-  background: #81a6c6;
-  transform: scale(1.05);
-}
-
-.square:active {
-  transform: scale(0.95);
-}
-
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
-}
-
+/* Game container */
 .game {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+/* Board container */
+.game-board {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
+/* Game info */
 .game-info {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #6e3636;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.winner {
-  color: #27ae60;
-  animation: glow 1s infinite alternate;
+.game-info ol {
+  padding-left: 20px;
 }
+
+.game-info button {
+  background-color: #2c2c2c;
+  color: #00ffff;
+  border: none;
+  padding: 6px 12px;
+  margin: 4px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.game-info button:hover {
+  background-color: #00ffff;
+  color: #1e1e1e;
+}
+
+/* Status text */
+.status {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00ffff;
+  text-align: center;
+}
+
+/* Board rows */
+.board-row {
+  display: flex;
+}
+
+/* Square buttons */
+.square {
+  width: 60px;
+  height: 60px;
+  background-color: #2c2c2c;
+  border: 2px solid #444;
+  color: #00ffff;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.square:hover {
+  background-color: #00ffff;
+  color: #1e1e1e;
+  transform: scale(1.1);
+}
+
+/* Reload button */
 .reload {
-  background: #1b023e;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #ff0066;
+  color: #ffffff;
   border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
-  margin-top: 20px;
-  &:hover {
-    background: #968b9b;
-  }
-}
-.save {
-  background: #1b023e;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin-top: 20px;
-  &:hover {
-    background: #968b9b;
-  }
+  font-weight: bold;
+  transition: all 0.2s ease;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 5px #2ecc71, 0 0 10px #2ecc71;
-  }
-  to {
-    text-shadow: 0 0 20px #27ae60, 0 0 30px #27ae60;
-  }
+.reload:hover {
+  background-color: #ff66aa;
+  transform: scale(1.05);
 }
